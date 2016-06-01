@@ -1,0 +1,76 @@
+<!doctype html>
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../paper-styles/demo-pages.html">
+<link rel="import" href="../../paper-button/paper-button.html">
+<link rel="import" href="../iron-localstorage-behavior.html">
+
+<dom-module id="simple-localstorage-element">
+
+    <template>
+        <style>
+            .feedback {
+                background-color: white;
+                padding: 20px;
+                margin-bottom: 20px;
+                white-space: pre;
+            }
+        </style>
+
+        <div class="feedback">[[feedback]]</div>
+
+        <paper-button raised on-tap="add">Add to cache</paper-button>
+        <paper-button raised on-tap="get">Get last from cache</paper-button>
+        <paper-button raised on-tap="show">Show all keys</paper-button>
+        <paper-button raised on-tap="prune">Prune</paper-button>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'simple-localstorage-element',
+
+            properties: {
+                key: {
+                    type: Number,
+                    value: 0
+                },
+
+                feedback: {
+                    type: String,
+                    value: ''
+                }
+            },
+
+            behaviors: [
+                Polymer.IronLocalStorageBehavior
+            ],
+
+            add: function() {
+                var value = Math.random();
+                this.saveToCache(++this.key, value).then(() => {
+                    this.feedback += `Added ${this.key} = ${value}\n`;
+                });
+            },
+
+            get: function() {
+                this.getFromCache(this.key).then(value => {
+                    alert(value);
+                });
+            },
+
+            show: function() {
+                var keys = [];
+                for (var i = 0; i < window.localStorage.length; i++){
+        			keys.push(window.localStorage.key(i));
+                }
+                this.feedback += `Keys in local storage: ${keys}\n`;
+            },
+
+            prune: function() {
+                this.pruneCache([], 2);
+                this.feedback += 'Pruned cached: kept only two newest entries\n';
+                this.show();
+            }
+        });
+    </script>
+
+</dom-module>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>iron-localstorage-behavior</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<script src="../../web-component-tester/browser.js"></script>
+		<script src="../../test-fixture/test-fixture-mocha.js"></script>
+
+		<link rel="import" href="simple-localstorage-element.html">
+		<link rel="import" href="../../test-fixture/test-fixture.html">
+	</head>
+	<body>
+
+		<test-fixture id="TrivialElement">
+			<template>
+				<simple-localstorage-element></simple-localstorage-element>
+			</template>
+		</test-fixture>
+
+		<script>
+			suite('<iron-localstorage-behavior>', function() {
+				suite('prune behavior', function() {
+					var element;
+					var oldest = { key: '1', timestamp: 1 };
+					var middle = { key: '2', timestamp: 2 };
+					var newest = { key: '3', timestamp: 3 };
+
+					setup(function() {
+						element = fixture('TrivialElement');
+					});
+
+					test('detects to be removed keys', function() {
+						expect(element._detectToBeRemovedKeys([middle, newest, oldest], 2)).to.be.eql([oldest.key]);
+					});
+
+					test('preserves all keys if there are less than max', function() {
+						expect(element._detectToBeRemovedKeys([middle, newest, oldest], 4)).to.be.eql([]);
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>
