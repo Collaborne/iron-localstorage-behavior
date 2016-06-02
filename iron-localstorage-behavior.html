@@ -23,13 +23,13 @@ Polymer.IronLocalStorageBehavior =  {
 		try {
 			var cacheEntryStr = window.localStorage.getItem(key);
 			try {
-	        	var cacheEntry = JSON.parse(cacheEntryStr);
+				var cacheEntry = JSON.parse(cacheEntryStr);
 				var value = cacheEntry ? cacheEntry.data : null;
 				return Promise.resolve(value);
-	        } catch (e) {
-	        	console.log(`Failed to parse storage value for "${key}": "${valueStr}"`);
+			} catch (e) {
+				console.log(`Failed to parse storage value for "${key}": "${valueStr}"`);
 				return Promise.resolve();
-	        }
+			}
 		} catch (e) {
 			return Promise.reject(e);
 		}
@@ -117,9 +117,9 @@ Polymer.IronLocalStorageBehavior =  {
 
 	/**
 	 * Return the entries
-	 * @param  {Array} entries Entries to be considered
-	 * @param  {Number} maxEntriesInLocalStorage
-	 * @return {Array}         Keys of the entries that should be returned
+	 * @param  {Array}	entries Entries to be considered
+	 * @param  {Number}	maxEntriesInLocalStorage
+	 * @return {Array}	Keys of the entries that should be returned
 	 */
 	_detectToBeRemovedKeys: function(entries, maxEntriesInLocalStorage) {
 		if (entries.length <= maxEntriesInLocalStorage) {
