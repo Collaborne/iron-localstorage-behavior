@@ -10,11 +10,10 @@ cache:
 before_script:
 - npm install web-component-tester bower polylint
 - bower install
-- bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git
 - polylint
 - export PATH=$PWD/node_modules/.bin:$PATH
 script:
 - xvfb-run wct
-after_success: '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && bower_components/collaborne-build-tools/gpages_build.sh Collaborne info@collaborne.com'
+after_success: '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git && bower_components/collaborne-build-tools/gpages_build.sh Collaborne info@collaborne.com'
 env:
-  secure: g2HzTEYgRF+6Ooj//wTCECmgE8tjF7Z+VukzC3R1GzXa4Ra6Qs5BAIgat4G+XvAn/ncpacF2uH+cK7ohPnMB7NC4DrVg3D7XxpIL/651V/CZlreTBrJRfFayx1dvaCvdMkFaySjB5gcZv9GH2RZetTB2T4e4ieexjD245R3Tfs9/cNFPND6p4X1qQSPZoSys0eDDVr+vpQc4gHWaM8YSjL3/27Ji4dqbhEzZ+EBBDF/6yC06f25RPIUPIy1GfRBYWU7OGxaP8tRujWCr0B//E6ZMATkzXOTL5+En/eDSuBSV7RpGK4NEEYBVGbgHvF6/OmK1eQfgfGbOojsPCA3/jNPCOjafHyEdPVGFwZic9+Dv0AYdZP6i8vQihHew0BqMcWdNoboZriAPvUdlpw8WzdpBmnCJkIaxl9NFMGqKzU5Bpm7Ho5QvgT4dWNPNQ/LSk3OO38RSZ1LeZ1kytCwz+PTXd2IKjnG0V7iiEnrE/4Qp4UIUK21VSLYQHx5LkXaRyT+Hkk/e1b/zPFYIqFf4qPS+r3tJikI7RA0Kukvnj1VITrpHroeng2j+aB7PVhVvch+onE1zsf7uPgSz8vq/+4K882KtxlwN10Os7JYI7xQN0f3/LzIz04TywI/NXioX6au2VgIGYV9gBI6SuN2ZYZDtexJk/rAwu40aJv3CBCE=
+  secure: DLYLZ6vF1F5rNUcAwmc/CLIPGZZuv5+ow14+RnkBa+Qioo1zoAPueiJdlLV8p/ED79inj5ugNCY19rkzmflbvLM3N0T+VFha6Wf3mlWb5VuiCKi265r6WFwdpFYSxmFOA4VKp5q1KecQ9oiTlLthNHCtrdpvgTirq+nN/kzy8TLYp43q0dNb7zTJsch80ir7ZRMKBCSlSMPgwNqN5quxoxJKCosyI0vVa+lhGEhllvSLqs7RDqHB4dYn+DqLJWqXKF5efSeAv3INwRZ2kEoNIKPnuh6b2+yATWqYhRI7a1w1JJrz5lAsh2+mIVBkkyOB5fDppf5JoZ9kQz+NeJQJXYNoi+5bQDxM1xmbikJ7e9ha8eqIhcBr2mwnDR100g1648kN9aD3e/N/Sl7O9OdoAsPZyJcEQxsGdFP0e4zccfwXSX4sEM7yzgeqNvXsp3ouvCW672ncrbIoJMuMvbBwuL1TozcjlPWnV7gu73LcakYagdXZdHyP+DB8GlaDej2QpNyZ5P2gv6gwLPRtUcNDMLfZteYq62RECUHeumz69wU/Pu72pRo18vlQO129mo/wInmLZvmDo2nuU9OB1PK7B/vXYaFFmaRBMK6Bilb4Z5W+qNzxypqdaAyrz1FgAKiNwwtP055OFudm8D+Rzoa/jCj+VF+pkXsh9FCgAmK0n74=
