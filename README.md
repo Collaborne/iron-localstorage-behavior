@@ -1,5 +1,7 @@
 _[Demo and API Docs](http://collaborne.github.io/iron-localstorage-behavior)_
 
+_[Blog post explaining the behavior](https://medium.com/collaborne-engineering/how-to-avoid-local-storage-from-overrunning-4c9702681290#.gfdbfc3u2)_
+
 
 iron-localstorage-behavior [![Bower version](https://badge.fury.io/bo/iron-localstorage-behavior.svg)](http://badge.fury.io/bo/iron-localstorage-behavior) [![Travis state](https://travis-ci.org/Collaborne/iron-localstorage-behavior.svg?branch=master)](https://travis-ci.org/Collaborne/iron-localstorage-behavior)
 =========
