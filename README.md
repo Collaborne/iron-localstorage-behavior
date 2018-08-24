@@ -1,7 +1,9 @@
 _[Blog post explaining the behavior](https://medium.com/collaborne-engineering/how-to-avoid-local-storage-from-overrunning-4c9702681290#.gfdbfc3u2)_
 
 
-iron-localstorage-behavior [![Bower version](https://badge.fury.io/bo/iron-localstorage-behavior.svg)](http://badge.fury.io/bo/iron-localstorage-behavior) [![Travis state](https://travis-ci.org/Collaborne/iron-localstorage-behavior.svg?branch=master)](https://travis-ci.org/Collaborne/iron-localstorage-behavior) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/Collaborne/iron-localstorage-behavior)
+iron-localstorage-behavior [![Bower version](https://badge.fury.io/bo/iron-localstorage-behavior.svg)](http://badge.fury.io/bo/iron-localstorage-behavior) [![Travis state](https://travis-ci.org/Collaborne/iron-localstorage-behavior.svg?branch=master)](https://travis-ci.org/Collaborne/iron-localstorage-behavior) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/Collaborne/iron-localstorage-behavior)  
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/Collaborneiron-localstorage-behavior)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/Collaborneiron-localstorage-behavior.svg)](https://vaadin.com/directory/component/Collaborneiron-localstorage-behavior)
 =========
 
 Access to local storage (allows users to prune older entries). The web component is built with [Polymer 1.x](https://www.polymer-project.org).
